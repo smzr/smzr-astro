@@ -1,0 +1,15 @@
+.button {
+    background-color: var(--c-primary);
+    border-radius: 2em;
+    padding: 1em 3.5em;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    line-height: 1 !important;
+    font-weight: 500;
+    color: var(--c-black);
+}

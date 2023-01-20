@@ -1,0 +1,23 @@
+{
+  "name": "@example/minimal",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@storyblok/astro": "^2.0.3",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "astro": "^1.9.0",
+    "clone-deep": "^4.0.1",
+    "vite": "^4.0.4"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}

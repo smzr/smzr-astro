@@ -1,0 +1,18 @@
+---
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+const content = renderRichText(blok.content);
+---
+<main {...storyblokEditable(blok)} id="main-content" tabindex="-1">
+    <article class="prose">
+        <h1>{blok.title}</h1>
+        <p>{blok.description}</p>
+        <Fragment set:html={content} />
+    </article>
+</main>
+<style lang="scss">
+    main {
+        margin-top: 6rem;
+    }
+</style>
