@@ -1,13 +1,21 @@
 ---
 import { SITE_TITLE } from '../config';
+import { Icon } from 'astro-icon'
+
 const today = new Date();
 ---
 
 <footer>
 	<p>&copy; {today.getFullYear()} {SITE_TITLE}. All rights reserved.</p>
-	<nav></nav>
+	<nav>
+		<a href="mailto:sammy@smzr.co.uk"><Icon name="ph:at-bold" /></a>
+		<a href="mailto:sammy@smzr.co.uk"><Icon name="mdi:github" /></a>
+		<a href="mailto:sammy@smzr.co.uk"><Icon name="mdi:linkedin" /></a>
+		<a href="mailto:sammy@smzr.co.uk"><Icon name="mdi:codepen" /></a>
+		<a href="mailto:sammy@smzr.co.uk"><Icon name="mdi:rss" /></a>
+	</nav>
 </footer>
-<style>
+<style lang="scss">
 	footer {
 		display: flex;
 		justify-content: space-between;
@@ -16,5 +24,16 @@ const today = new Date();
 		padding: 0 2rem;
 		line-height: 1;
 		font-size: var(--s-xs);
+	}
+
+	nav {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	[astro-icon] {
+		width: 2rem;
+		height: 2rem;
+		color: var(--c-secondary);
 	}
 </style>
