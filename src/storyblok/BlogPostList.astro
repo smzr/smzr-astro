@@ -5,7 +5,7 @@ const { blok } = Astro.props;
 const storyblokApi = useStoryblokApi();
 
 const { data: posts } = await storyblokApi.get('cdn/stories', {
-  version: "draft",
+  version: import.meta.env.DEV ? "draft" : "published",
   content_type: 'blogPost',
   sort_by: 'first_published_at:desc',
 });
