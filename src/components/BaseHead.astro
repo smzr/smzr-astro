@@ -1,5 +1,6 @@
 ---
 import '../styles/main.scss';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 export interface Props {
 	title: string;
@@ -9,7 +10,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.request.url);
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/placeholder-social.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
