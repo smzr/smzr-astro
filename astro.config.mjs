@@ -14,7 +14,8 @@ export default defineConfig({
       blogPost: 'storyblok/BlogPost',
       blogPostList: 'storyblok/BlogPostList',
       contentImage: 'storyblok/ContentImage',
-      eyebrow: 'storyblok/Eyebrow'
+      eyebrow: 'storyblok/Eyebrow',
+      contact: 'storyblok/Contact',
     }
   })],
   vite: {
