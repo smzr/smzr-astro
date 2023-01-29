@@ -17,7 +17,7 @@ const { data: posts } = await storyblokApi.get('cdn/stories', {
             <div class="image"></div>
             <div class="flow">
                 <time class="eyebrow">{new Date(post.first_published_at ?? post.published_at ?? post.created_at).toLocaleDateString("en-GB", {dateStyle: "long"})}</time>
-                <h3><a href={post.full_slug}>{post.content.title}</a></h3>
+                <h3><a href={`/${post.full_slug}`}>{post.content.title}</a></h3>
                 <p>{post.content.description}</p>
             </div>
         </li>
