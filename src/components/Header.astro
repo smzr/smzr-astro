@@ -9,8 +9,8 @@ import { SITE_TITLE } from '../config';
 	</h2>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="/services">Services</HeaderLink>
+		<!-- <HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink href="/services">Services</HeaderLink> -->
 		<HeaderLink href="/writing">Writing</HeaderLink>
 		<HeaderLink href="/contact">Contact</HeaderLink>
 	</nav>
@@ -19,10 +19,18 @@ import { SITE_TITLE } from '../config';
 	header {
 		display: flex;
 		justify-content: space-between;
+		gap: 1rem;
 		align-items: center;
 		min-height: 5rem;
 		padding: 0 2rem;
 		background-color: #0B120D;
 		line-height: 1;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: var(--gutter);
 	}
 </style>

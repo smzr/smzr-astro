@@ -25,7 +25,7 @@
         background-color: rgba(#0B120D, .65);
         backdrop-filter: blur(10px);
         border: 1px solid var(--c-primary);
-        padding: 3rem 4rem;
+        padding: 3rem 2rem;
 
         h2 {
             --flow-space: 2rem;
@@ -44,6 +44,10 @@
 
         form {
             --flow-space: 4rem;
+        }
+
+        @media (min-width: 50rem) {
+            padding: 3rem 4rem;
         }
     }
 
@@ -68,7 +72,8 @@
         border-radius: 8px;
         width: 100%;
         color: var(--c-secondary);
-        padding: 1rem;
+        padding: .75rem 1rem;
+        outline: none;
     }
 
     button.button {

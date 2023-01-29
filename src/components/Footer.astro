@@ -21,10 +21,14 @@ const today = new Date();
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		min-height: 5rem;
-		padding: 0 2rem;
+		padding: 1.5rem 2rem;
 		line-height: 1;
 		font-size: var(--s-xs);
+
+		@media (max-width: 40rem) {
+			flex-direction: column-reverse;
+			gap: 2rem;
+		}
 	}
 
 	nav {
