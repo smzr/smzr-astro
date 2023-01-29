@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import storyblok from "@storyblok/astro";
 import { loadEnv } from 'vite';
-import basicSsl from '@vitejs/plugin-basic-ssl';
 import netlify from "@astrojs/netlify/functions";
 const env = loadEnv('', process.cwd(), 'STORYBLOK');
 
@@ -18,12 +17,6 @@ export default defineConfig({
       eyebrow: 'storyblok/Eyebrow'
     }
   })],
-  vite: {
-    plugins: [basicSsl()],
-    server: {
-      https: true
-    }
-  },
   output: "server",
   adapter: netlify()
 });
