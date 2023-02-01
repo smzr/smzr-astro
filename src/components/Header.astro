@@ -1,12 +1,11 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import Svg from './Svg.astro';
 import { SITE_TITLE } from '../config';
 ---
 
 <header class="site-header">
-	<h2>
-		{SITE_TITLE}
-	</h2>
+	<Svg file="smzr-logo"/>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
 		<!-- <HeaderLink href="/about">About</HeaderLink>
@@ -21,10 +20,14 @@ import { SITE_TITLE } from '../config';
 		justify-content: space-between;
 		gap: 1rem;
 		align-items: center;
-		min-height: 5rem;
-		padding: 0 2rem;
+		padding: 1.25rem 2rem;
 		background-color: #0B120D;
 		line-height: 1;
+
+		> :global(svg) {
+			max-height: 2.5rem;
+			color: var(--c-primary);
+		}
 	}
 
 	nav {
