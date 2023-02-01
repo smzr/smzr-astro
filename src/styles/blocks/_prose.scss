@@ -13,6 +13,13 @@
         display: none;
     }
 
+    hr {
+        --flow-space: clamp( 2.375rem, 1.98rem + 1.96vw, 3.75rem );
+        margin: var( --flow-space ) 0;
+        border: none;
+        border-top: 1px dashed rgba( #FCD2A4, 0.25 );
+    }
+
     > img,
     > table {
         width: 100%;
