@@ -74,6 +74,11 @@
         color: var(--c-secondary);
         padding: .75rem 1rem;
         outline: none;
+        transition: background-color .25s ease-in-out;
+
+        &:focus {
+            background-color: rgba(#000, .5);
+        }
     }
 
     button.button {

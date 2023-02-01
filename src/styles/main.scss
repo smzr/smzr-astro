@@ -19,6 +19,11 @@
     --c-black: #15251F;
 }
 
+::selection {
+	color: white;
+	background-color: rgba( #FF3C38, 0.4 );
+}
+
 html {
     height: 100%;
 }

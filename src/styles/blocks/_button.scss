@@ -5,6 +5,7 @@
     display: inline-flex;
     align-items: center;
     border: none;
+    outline: 2px solid transparent;
     text-decoration: none;
     cursor: pointer;
     position: relative;
@@ -12,4 +13,12 @@
     line-height: 1 !important;
     font-weight: 500;
     color: var(--c-black);
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        outline: 2px solid var(--c-orange);
+        outline-offset: 1px;
+        text-decoration: none;
+    }
 }
