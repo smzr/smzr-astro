@@ -1,11 +1,10 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import Svg from './Svg.astro';
-import { SITE_TITLE } from '../config';
+import { Icon } from 'astro-icon';
 ---
 
 <header class="site-header">
-	<Svg file="smzr-logo"/>
+	<Icon name="smzr-logo"/>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
 		<!-- <HeaderLink href="/about">About</HeaderLink>
