@@ -19,7 +19,7 @@ const content = renderRichText(blok.content, {
 ---
 <section {...storyblokEditable(blok)} class={`wrapper ${layout}`}>
     <div class="content flow"><Fragment set:html={content}/></div>
-    <div class="image"><img src={blok.image.filename} alt="Hero Image"></div>
+    <div class="image"><img src={`${blok.image.filename}/m/800x1000/smart`} alt="Hero Image"></div>
 </section>
 <style lang="scss" is:global>
     .content-image {
