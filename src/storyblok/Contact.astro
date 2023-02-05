@@ -35,13 +35,13 @@ const content = renderRichText(blok.content, {
     .contact {
         --gutter: 3rem;
         display: grid;
-        gap: var(--gutter, 2rem);
+        gap: 2.5rem var(--gutter, 2rem);
 
         .content {
             h1,
             h2 {
                 + * {
-                    --flow-space: 2rem;
+                    --flow-space: clamp( 1.375rem, 1.2rem + .89vw, 2rem );
                 }
             }
 

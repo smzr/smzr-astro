@@ -26,14 +26,14 @@ const content = renderRichText(blok.content, {
         --switcher-vertical-alignment: center;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--gutter, 2rem);
+        gap: 2.5rem var(--gutter, 2rem);
 		align-items: var(--switcher-vertical-alignment, flex-start);
 
         .content {
             h1,
             h2 {
                 + * {
-                    --flow-space: 2rem;
+                    --flow-space: clamp( 1.375rem, 1.2rem + .89vw, 2rem );
                 }
             }
 
@@ -41,7 +41,7 @@ const content = renderRichText(blok.content, {
             h2 { font-size: var(--s-xxl); }
 
             .button {
-                --flow-space: 2.5rem;
+                --flow-space: clamp(1.5rem, 0.4231rem + 3.0769vw, 2.5rem);
             }
         }
 

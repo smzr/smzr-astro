@@ -38,7 +38,7 @@ const { data: posts } = await storyblokApi.get('cdn/stories', {
             gap: var(--gutter, 2rem);
 
             + li {
-                margin-top: 6rem;
+                margin-top: clamp(3rem, -0.2308rem + 9.2308vw, 6rem);
             }
         }
 
