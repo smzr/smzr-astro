@@ -2,6 +2,7 @@
 @import 'fonts';
 
 :root {
+    scroll-behavior: smooth;
     --s-giant: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
     --s-huge: clamp(1.75rem, 1.3333rem + 2.0833vw, 3rem);
     --s-xxl: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
