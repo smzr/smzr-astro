@@ -1,5 +1,6 @@
 ---
 import { storyblokEditable, renderRichText } from "@storyblok/astro";
+import '../styles/dracula-prism.scss';
 
 const { blok } = Astro.props;
 const content = renderRichText(blok.content);
@@ -11,8 +12,9 @@ const content = renderRichText(blok.content);
         <Fragment set:html={content} />
     </article>
 </main>
+<script src="../js/prism.js"></script>
 <style lang="scss">
     main {
-        margin-top: 6rem;
+        margin-top: clamp(3rem, -0.2308rem + 9.2308vw, 6rem);
     }
 </style>

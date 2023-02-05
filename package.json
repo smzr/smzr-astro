@@ -16,7 +16,6 @@
     "@vitejs/plugin-basic-ssl": "^1.0.1",
     "astro": "^2.0.2",
     "astro-icon": "^0.8.0",
-    "clone-deep": "^4.0.1",
     "vite": "^4.0.4"
   },
   "devDependencies": {
