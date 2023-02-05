@@ -87,8 +87,8 @@ pre::-webkit-scrollbar-thumb
 
 pre[class*="language-"]::-moz-selection,
 pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection 
+code::-moz-selection,
+code ::-moz-selection 
 {
   text-shadow: none;
   background-color: var(--selection);
@@ -96,8 +96,8 @@ code[class*="language-"] ::-moz-selection
 
 pre[class*="language-"]::selection,
 pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection 
+code::selection,
+code ::selection 
 {
   text-shadow: none;
   background-color: var(--selection);
@@ -230,14 +230,14 @@ div.code-toolbar > .toolbar span:focus
 
 @media print 
 {
-  code[class*="language-"],
+  code,
   pre[class*="language-"] 
   {
     text-shadow: none;
   }
 }
 
-code[class*="language-"],
+code,
 pre[class*="language-"] 
 {
   color: var(--foreground);
@@ -274,14 +274,14 @@ pre[class*="language-"]
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-:not(pre) > code[class*="language-"],
+:not(pre) > code,
 pre[class*="language-"] 
 {
   background: var(--background);
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] 
+:not(pre) > code 
 {
   padding: 4px 7px;
   border-radius: 0.3em;
