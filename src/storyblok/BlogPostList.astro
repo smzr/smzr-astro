@@ -56,10 +56,15 @@ const { data: posts } = await storyblokApi.get('cdn/stories', {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: transform 0.3s ease;
+                transition: transform 300ms ease;
             }
 
             &:hover {
+                border-color: var(--c-orange);
+                outline-color: var(--c-orange);
+                transition: border-color 150ms ease-in,
+                            outline-color 200ms ease-out 100ms;
+
                 img {
                     transform: scale(1.1);
                 }
