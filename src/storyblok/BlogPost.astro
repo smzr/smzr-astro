@@ -8,7 +8,7 @@ const content = renderRichText(blok.content);
 <main {...storyblokEditable(blok)} id="main-content" tabindex="-1">
     <article class="prose">
         {blok.image && <div class="hero-image">
-             <img src={blok.image.filename} alt={blok.image.alt} />  
+             <img src={`${blok.image.filename}/m/800x450/smart`} alt={blok.image.alt} />  
         </div>}
         <h1>{blok.title}</h1>
         <p>{blok.description}</p>
