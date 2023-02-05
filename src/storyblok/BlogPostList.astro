@@ -51,6 +51,8 @@ const { data: posts } = await storyblokApi.get('cdn/stories', {
             outline: 2px inset var(--c-primary);
             outline-offset: 1px;
             overflow: hidden;
+            transition: outline-color 200ms ease-in,
+                        border-color 150ms ease-out 150ms;
 
             img {
                 width: 100%;
