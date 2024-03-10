@@ -40,7 +40,7 @@ body {
     color: var(--c-secondary);
     font-family: 'Montserrat', sans-serif;
     font-size: var(--s-md);
-    line-height: 1.7;
+    line-height: 1.5;
 
     &::before {
         content: '';
@@ -100,3 +100,4 @@ a {
 // UTILITIES
 @import 'utilities/flow';
 @import 'utilities/wrapper';
+@import 'utilities/marquee';

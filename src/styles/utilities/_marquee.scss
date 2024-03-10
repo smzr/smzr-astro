@@ -1,0 +1,38 @@
+.marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 1rem;
+}
+
+.marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    animation: scroll var( --marquee-speed, 8s ) linear infinite;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    gap: inherit;
+
+    & > * {
+        display: block;
+        line-height: 1;
+        margin: 0;
+        font-family: 'Vollkorn', serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: var(--c-primary);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX( 0 );
+    }
+
+    to {
+        transform: translateX( calc( -100% - 1rem ) );
+    }
+}
