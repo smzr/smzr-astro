@@ -35,24 +35,12 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: #151514;
+    background-color: #171B15;
     min-height: 100vh;
     color: var(--c-secondary);
     font-family: 'Montserrat', sans-serif;
     font-size: var(--s-md);
     line-height: 1.5;
-
-    &::before {
-        content: '';
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: linear-gradient(145deg, #151514, #3D3E2F) no-repeat;
-        z-index: -999;
-    }
 
     main {
         flex: 1;
