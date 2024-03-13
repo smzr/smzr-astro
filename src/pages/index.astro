@@ -45,7 +45,7 @@ import sammyImage from "../images/sammy.jpg";
     .hero {
         position: relative;
         overflow-x: hidden;
-        padding: 6rem 0;
+        padding: 6rem 2.5rem;
 
         &::before {
             position: absolute;
@@ -67,7 +67,6 @@ import sammyImage from "../images/sammy.jpg";
             display: grid;
             grid-template-columns: 1fr;
             gap: 4rem;
-            padding: 0 2.5rem;
         }
 
         .content {
@@ -135,7 +134,7 @@ import sammyImage from "../images/sammy.jpg";
         }
 
         @media (min-width: 768px) {
-            padding: 8rem 0 10rem;
+            padding: 8rem 2.5rem 10rem;
 
             .container {
                 grid-template-columns: 1fr 1fr;
@@ -157,6 +156,8 @@ import sammyImage from "../images/sammy.jpg";
             .image {
                 aspect-ratio: 7 / 10;
                 max-width: 100%;
+                width: auto;
+                max-height: calc( 75vh -  6rem );
             }
         }
     }
