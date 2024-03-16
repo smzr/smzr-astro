@@ -4,7 +4,60 @@ import { Icon } from 'astro-icon'
 
 const today = new Date();
 ---
-
+<div class="services marquee">
+	<div class="marquee__content">
+		<div class="text">Website Development</div>
+		<div class="dot"></div>
+		<div class="text">E-commerce</div>
+		<div class="dot"></div>
+		<div class="text">WordPress</div>
+		<div class="dot"></div>
+		<div class="text">Graphic Design</div>
+		<div class="dot"></div>
+		<div class="text">Website Redesign</div>
+		<div class="dot"></div>
+		<div class="text">Adobe Suite</div>
+		<div class="dot"></div>
+		<div class="text">RESTful APIs</div>
+		<div class="dot"></div>
+		<div class="text">PHP</div>
+		<div class="dot"></div>
+		<div class="text">Node.js</div>
+		<div class="dot"></div>
+		<div class="text">Website Optimisation</div>
+		<div class="dot"></div>
+		<div class="text">Website Maintenance</div>
+		<div class="dot"></div>
+		<div class="text">Accessibility</div>
+		<div class="dot"></div>
+	</div>
+	<div class="marquee__content" aria-hidden="true">
+		<div class="text">Website Development</div>
+		<div class="dot"></div>
+		<div class="text">E-commerce</div>
+		<div class="dot"></div>
+		<div class="text">WordPress</div>
+		<div class="dot"></div>
+		<div class="text">Graphic Design</div>
+		<div class="dot"></div>
+		<div class="text">Website Redesign</div>
+		<div class="dot"></div>
+		<div class="text">Adobe Suite</div>
+		<div class="dot"></div>
+		<div class="text">RESTful APIs</div>
+		<div class="dot"></div>
+		<div class="text">PHP</div>
+		<div class="dot"></div>
+		<div class="text">Node.js</div>
+		<div class="dot"></div>
+		<div class="text">Website Optimisation</div>
+		<div class="dot"></div>
+		<div class="text">Website Maintenance</div>
+		<div class="dot"></div>
+		<div class="text">Accessibility</div>
+		<div class="dot"></div>
+	</div>
+</div>
 <footer>
 	<div class="container">
 		<div class="flow">
@@ -24,6 +77,30 @@ const today = new Date();
 	</div>
 </footer>
 <style lang="scss">
+	.services.marquee {
+		--marquee-speed: 30s;
+		border-top: 1px solid #3E362F;
+		gap: 2rem;
+		padding: 2rem 0 1.8rem;
+
+		.marquee__content {
+			text-transform: none;
+			font-style: normal;
+
+			> * {
+				font-size: var(--s-xl);
+			}
+		}
+
+		.dot {
+			width: 0.5rem;
+			height: 0.5rem;
+			margin-bottom: .25rem;
+			border-radius: 50%;
+			background-color: var(--c-primary);
+		}
+	}
+
 	footer {
 		border-top: 1px solid #3E362F;
 		padding: 0 2rem;
