@@ -1,10 +1,10 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { Icon } from 'astro-icon';
+import Logo from "/smzr-logo.svg?raw";
 ---
 
 <header class="site-header">
-	<Icon name="smzr-logo"/>
+	<Fragment set:html={Logo} />
 	<nav class="navbar">
 		<HeaderLink href="/">Home</HeaderLink>
 		<!-- <HeaderLink href="/about">About</HeaderLink>
@@ -18,7 +18,7 @@ import { Icon } from 'astro-icon';
 	<div class="navbar-sidebar__backdrop" role="presentation"></div>
 	<aside class="navbar-sidebar">
 		<div class="navbar-sidebar__header">
-			<Icon name="smzr-logo"/>
+			<Fragment set:html={Logo} />
 		</div>
 		<div class="navbar-sidebar__body">
 		<nav class="menu">

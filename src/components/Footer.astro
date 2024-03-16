@@ -1,6 +1,8 @@
 ---
 import { SITE_TITLE } from '../config';
-import { Icon } from 'astro-icon'
+import LinkedInIcon from "/icons/linkedin.svg?raw";
+import GitHubIcon from "/icons/github.svg?raw";
+import CodePenIcon from "/icons/codepen.svg?raw";
 
 const today = new Date();
 ---
@@ -69,9 +71,9 @@ const today = new Date();
 		<div class="footer-bottom">
 			<p>{today.getFullYear()} &copy; {SITE_TITLE}</p>
 			<nav>
-				<a href="https://www.linkedin.com/in/smzr" title="@smzr on LinkedIn"><Icon name="mdi:linkedin" /> LinkedIn</a>
-				<a href="https://github.com/smzr" title="@smzr on GitHub"><Icon name="mdi:github" /> GitHub</a>
-				<a href="https://codepen.io/smzr" title="@smzr on CodePen"><Icon name="mdi:codepen" /> CodePen</a>
+				<a href="https://www.linkedin.com/in/smzr" title="@smzr on LinkedIn"><Fragment set:html={LinkedInIcon} /> LinkedIn</a>
+				<a href="https://github.com/smzr" title="@smzr on GitHub"><Fragment set:html={GitHubIcon} /> GitHub</a>
+				<a href="https://codepen.io/smzr" title="@smzr on CodePen"><Fragment set:html={CodePenIcon} /> CodePen</a>
 			</nav>
 		</div>
 	</div>
@@ -80,8 +82,10 @@ const today = new Date();
 	.services.marquee {
 		--marquee-speed: 30s;
 		border-top: 1px solid #3E362F;
+		background-color: #171B15;
 		gap: 2rem;
 		padding: 2rem 0 1.8rem;
+		margin-top: clamp(3rem,-0.2308rem + 9.2308vw,6rem);
 
 		.marquee__content {
 			text-transform: none;
@@ -103,6 +107,7 @@ const today = new Date();
 
 	footer {
 		border-top: 1px solid #3E362F;
+		background-color: #171B15;
 		padding: 0 2rem;
 
 		.container {
@@ -160,11 +165,11 @@ const today = new Date();
 			gap: 0.5rem;
 			color: inherit;
 			transition: all 200ms ease-in;
-		}
-	}
 
-	[astro-icon] {
-		width: 1.5rem;
-		height: 1.5rem;
+			> svg {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
 	}
 </style>
