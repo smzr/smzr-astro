@@ -9,8 +9,8 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
         <p>I'm a problem solver at heart and love taking on complex and challenging projects. I'm great at taking sophisticated ideas and figuring out how to get them built.</p>
     </SectionHeading>
     <div class="container">
-        <ProjectsContentSlider />
         <ProjectsImageSlider />
+        <ProjectsContentSlider />
     </div>
 </section>
 <script>
@@ -50,10 +50,14 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
         gap: 2rem 1rem;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         .container {
             grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
             align-items: center;
+
+            :global(.projects-image) {
+                order: 2;
+            }
         }
     }
 </style>
