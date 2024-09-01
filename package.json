@@ -16,7 +16,7 @@
     "@vitejs/plugin-basic-ssl": "^1.0.1",
     "astro": "^4.5.5",
     "astro-icon": "^1.1.0",
-    "swiper": "^11.0.7",
+    "swiper": "^11.1.11",
     "vite": "^4.0.4",
     "vue": "^3.4.21"
   },

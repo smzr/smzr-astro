@@ -1,0 +1,71 @@
+---
+import 'swiper/swiper-bundle.css';
+---
+<div class="projects-content">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide flow">
+                <h3>Italia Conti</h3>
+                <small><em>Note: Designed and developed under boxChilli</em></small>
+                <p>Italia Conti is a performing arts institution in the United Kingdom with a rich history since 1911 that offers vocational and conservatory-style training to students. The institution emphasizes collaborative and interdisciplinary approaches, fostering a supportive environment for talented individuals.</p>
+            </div>
+            <div class="swiper-slide flow">
+                <h3>Pecorino</h3>
+                <p>Pecorino is an authentic Italian takeaway based in East Wittering, United Kingdom. They offer a range of Italian dishes including pizza, pasta, and salads. The goal of the website was to showcase the authentic Italian food and provide an easy way for customers to view the menu.</p>
+            </div>
+            <div class="swiper-slide flow">
+                <h3>New Forest Activities</h3>
+                <small><em>Note: Designed and developed under Website Success</em></small>
+                <p>New Forest Activities is the largest provider of outdoor activities within the New Forest National Park. They offer a wide range of activities including canoeing, kayaking, archery, and more. The website was designed to showcase the activities on offer and provide an easy way for customers to book online.</p>
+            </div>
+            <div class="swiper-slide flow">
+                <h3>RADAR Festival</h3>
+                <small><em>Note: Designed and developed under boxChilli</em></small>
+                <p>RADAR Festival is a dynamic addition to the UK and European music scene that celebrates the spirit of progressive music and community. Founded in 2019 by seasoned industry professionals Catherine Jackson-Smith and Joe James, it was born out of a passion for pushing musical boundaries and creating unforgettable experiences.</p>
+            </div>
+            <div class="swiper-slide flow">
+                <h3>Luke and Sammie</h3>
+                <p>Luke and Sammie is a wedding website which was built for an engaged couple - now happily married! The website was designed to provide information about the wedding day, including the venue, accommodation, and RSVP details.</p>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<style lang="scss">
+    :root {
+        --swiper-theme-color: #FBBA72;
+        --swiper-pagination-bullet-inactive-color: #FCD2A4;
+        --swiper-pagination-bullet-inactive-opacity: 0.5;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+		background-color: #0B120D;
+		border: 1px solid #3E362F;
+        padding-bottom: 2.25rem;
+    }
+
+    .swiper-slide {
+        padding: 2rem;
+        height: auto;
+
+        :global(h3) {
+            font-size: var(--s-huge);
+        }
+
+        :global(p) {
+            font-size: var(--s-sm);
+        }
+
+        :global(small) {
+            --flow-space: 1rem;
+            display: block;
+            font-size: var(--s-xs);
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 2rem;
+    }
+</style>
