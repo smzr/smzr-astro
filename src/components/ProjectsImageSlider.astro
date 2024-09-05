@@ -32,7 +32,9 @@ import newforest from '../assets/projects/newforest.jpg';
                         </svg>
                     </a>
                 </div>
-                <Image src={italiaconti} alt="Italia Conti" />
+                <a href="https://www.italiaconti.com" target="_blank" class="image">
+                    <Image src={italiaconti} alt="Italia Conti" />
+                </a>
             </div>
             <div class="swiper-slide">
                 <div class="top-bar">
@@ -43,7 +45,9 @@ import newforest from '../assets/projects/newforest.jpg';
                         </svg>
                     </a>
                 </div>
-                <Image src={pecorino} alt="Pecorino" />
+                <a href="https://pecorinoitalian.co.uk/" target="_blank" class="image">
+                    <Image src={pecorino} alt="Pecorino" />
+                </a>
             </div>
             <div class="swiper-slide">
                 <div class="top-bar">
@@ -54,7 +58,9 @@ import newforest from '../assets/projects/newforest.jpg';
                         </svg>
                     </a>
                 </div>
-                <Image src={capital} alt="Capital" />
+                <a href="https://www.capitallaw.co.uk/" target="_blank" class="image">
+                    <Image src={capital} alt="Capital" />
+                </a>
             </div>
             <div class="swiper-slide">
                 <div class="top-bar">
@@ -65,7 +71,9 @@ import newforest from '../assets/projects/newforest.jpg';
                         </svg>
                     </a>
                 </div>
-                <Image src={lukeandsammie} alt="Luke and Sammie" />
+                <a href="https://lukeandsammie.com/" target="_blank" class="image">
+                    <Image src={lukeandsammie} alt="Luke and Sammie" />
+                </a>
             </div>
             <div class="swiper-slide">
                 <div class="top-bar">
@@ -76,7 +84,9 @@ import newforest from '../assets/projects/newforest.jpg';
                         </svg>
                     </a>
                 </div>
-                <Image src={radar} alt="RADAR Festival" />
+                <a href="https://www.radarfestival.co.uk/" target="_blank" class="image">
+                    <Image src={radar} alt="RADAR Festival" />
+                </a>
             </div>
             <div class="swiper-slide">
                 <div class="top-bar">
@@ -87,7 +97,9 @@ import newforest from '../assets/projects/newforest.jpg';
                         </svg>
                     </a>
                 </div>
-                <Image src={newforest} alt="New Forest Activities" />
+                <a href="https://www.newforestactivities.co.uk/" target="_blank" class="image">
+                    <Image src={newforest} alt="New Forest Activities" />
+                </a>
             </div>
         </div>
         <div class="autoplay-progress">
@@ -108,12 +120,17 @@ import newforest from '../assets/projects/newforest.jpg';
         position: relative;
         width: 100%;
 
-        img {
+        a.image {
             aspect-ratio: 16/9;
+            display: block;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 0%;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 0%;
+            }
         }
     }
 
