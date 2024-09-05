@@ -1,6 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Projects from "../components/Projects.astro";
+import Testimonial from "../components/Testimonial.astro";
+
+const today = new Date();
+const year = today.getFullYear();
+const experience = year - 2019;
 ---
 <Layout title="Sammy McKay | Full-stack web developer" description="I'm a full-stack developer, with over 4 years professional experience engineering tailored solutions.">
 	<section class="hero">
@@ -10,7 +15,7 @@ import Projects from "../components/Projects.astro";
                     <span>Hello, I am</span>
                     Sammy
                 </h1>
-                <p>A full-stack developer, with over 5 years professional experience engineering tailored solutions.</p>
+                <p>A full-stack developer, with over {experience} years professional experience engineering tailored solutions.</p>
             </div>
             <div class="image">
                 <img src="/images/sammy.jpg" alt="Hero Image">
@@ -39,6 +44,7 @@ import Projects from "../components/Projects.astro";
     </section>
     <div class="bg-grid-wrapper">
         <Projects />
+        <Testimonial />
         <div class="bg-grid"></div>
     </div>
 </Layout>
@@ -165,7 +171,7 @@ import Projects from "../components/Projects.astro";
 
     .bg-grid-wrapper {
         position: relative;
-        min-height: 100rem;
+        padding-bottom: 6rem;
 
         .bg-grid {
             position: absolute;
@@ -177,6 +183,7 @@ import Projects from "../components/Projects.astro";
             background-position: top center;
             -webkit-mask-image: linear-gradient(to bottom, transparent, 15%, white, 85%, transparent);
             mask-image: linear-gradient(to bottom, transparent, 15%, white, 85%, transparent);
+            z-index: -1;
         }
     }
 </style>

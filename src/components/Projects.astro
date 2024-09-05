@@ -15,22 +15,45 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
 </section>
 <script>
     import Swiper from 'swiper';
-    import { Pagination, Navigation, EffectFade, Controller } from 'swiper/modules';
+    import { Pagination, Navigation, EffectFade, Controller, Autoplay } from 'swiper/modules';
+
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+
+    function formatTime(time) {
+        return `${Math.ceil(time / 1000).toLocaleString('en-US', {
+            minimumIntegerDigits: 2,
+            useGrouping: false
+        })}`;
+    }
 
     const contentSwiper = new Swiper(".projects-content > .swiper", {
-        modules: [Pagination, Controller],
+        modules: [Pagination, Controller, Autoplay],
         pagination: {
             el: ".swiper-pagination",
             dynamicBullets: true,
+            clickable: false
         },
+        allowTouchMove: false
     });
     
     const imageSwiper = new Swiper(".projects-image > .swiper", {
-        modules: [Navigation, EffectFade, Controller],
+        modules: [Navigation, EffectFade, Controller, Autoplay],
         effect: 'fade',
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${formatTime(time)}`;
+            }
+        },
         navigation: {
             nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            prevEl: ".swiper-button-prev"
         }
     });
 
@@ -39,7 +62,7 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
 </script>
 <style lang="scss">
     .projects {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 
     .container {
@@ -47,10 +70,14 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
         grid-template-columns: minmax(0, 1fr);
         max-width: 1280px;
         margin: 0 auto;
-        gap: 2rem 1rem;
+        gap: 1.5rem 1rem;
     }
 
     @media (min-width: 1024px) {
+        .projects {
+            padding: 0 2rem;
+        }
+
         .container {
             grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
             align-items: center;

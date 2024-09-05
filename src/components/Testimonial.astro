@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import authorImage from '../assets/testimonials/weber-andrea.jpg';
+---
+<section class="testimonial">
+    <blockquote>
+        <p>“We entrusted Sammy with the entire web development process, and he delivered a site that beautifully tells the story of our brand. His technical skills and industry knowledge have been instrumental in our success.”</p>
+    </blockquote>
+    <figcaption>
+        <Image src={authorImage} alt="Weber Rocha (left) and Andrea Avila (right)" width={40} />
+        <p>Andrea Avila — <cite><a href="https://pecorinoitalian.co.uk/" target="_blank">Pecorino Wittering</a></cite></p>
+    </figcaption>
+</section>
+<style lang="scss">
+    .testimonial {
+        margin-top: 2rem;
+        padding: 8rem 1rem;
+        min-height: calc(60vh - 5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        > * {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        blockquote {
+            font-family: 'Vollkorn', serif;
+            font-weight: 500;
+            font-size: var(--s-xxl);
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        figcaption {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+
+            img {
+                border-radius: 50%;
+            }
+
+            p {
+                font-size: var(--s-md);
+                font-weight: 400;
+                line-height: 1.2;
+            }
+
+            cite a {
+                font-style: normal;
+                font-weight: 400;
+                color: var(--c-secondary);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            padding: 8rem 2rem;
+        }
+    }
+</style>
