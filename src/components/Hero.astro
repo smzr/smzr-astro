@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import sammy from '../assets/sammy.jpg';
+
 const today = new Date();
 const year = today.getFullYear();
 const experience = year - 2019;
@@ -13,7 +16,13 @@ const experience = year - 2019;
             <p>A full-stack developer, with over {experience} years professional experience engineering tailored solutions.</p>
         </div>
         <div class="image">
-            <img src="/images/sammy.jpg" alt="Sammy McKay">
+            <Image 
+                src={sammy}
+                width={sammy.width / 2}
+                densities={[1, 2]}
+                loading="eager"
+                alt="Sammy McKay"
+            />
             <a class="marquee-wrapper" href="https://www.youtube.com/watch?v=Vhh_GeBPOhs">
                 <div class="marquee">
                     <div class="marquee__content">
