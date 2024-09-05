@@ -7,7 +7,14 @@ import authorImage from '../assets/testimonials/weber-andrea.jpg';
         <p>“We entrusted Sammy with the entire web development process, and he delivered a site that beautifully tells the story of our brand. His technical skills and industry knowledge have been instrumental in our success.”</p>
     </blockquote>
     <figcaption>
-        <Image src={authorImage} alt="Weber Rocha (left) and Andrea Avila (right)" width={40} />
+        <div class="image">
+            <Image 
+                src={authorImage}
+                alt="Weber Rocha (left) and Andrea Avila (right)"
+                width={40}
+                densities={[1, 2, 3]}
+            />
+        </div>
         <p>Andrea Avila — <cite><a href="https://pecorinoitalian.co.uk/" target="_blank">Pecorino Wittering</a></cite></p>
     </figcaption>
 </section>
@@ -40,8 +47,18 @@ import authorImage from '../assets/testimonials/weber-andrea.jpg';
             justify-content: center;
             gap: 1.5rem;
 
-            img {
+            .image {
+                position: relative;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
 
             p {
