@@ -3,20 +3,23 @@ import { Image } from 'astro:assets';
 import authorImage from '../assets/testimonials/weber-andrea.jpg';
 ---
 <section class="testimonial">
-    <blockquote>
-        <p>“We entrusted Sammy with the entire web development process, and he delivered a site that beautifully tells the story of our brand. His technical skills and industry knowledge have been instrumental in our success.”</p>
-    </blockquote>
-    <figcaption>
-        <div class="image">
-            <Image 
-                src={authorImage}
-                alt="Weber Rocha (left) and Andrea Avila (right)"
-                width={40}
-                densities={[1, 2, 3]}
-            />
-        </div>
-        <p>Andrea Avila — <cite><a href="https://pecorinoitalian.co.uk/" target="_blank">Pecorino Wittering</a></cite></p>
-    </figcaption>
+    <figure>
+        <blockquote>
+            <p>“We entrusted Sammy with the entire web development process, and he delivered a site that beautifully tells the story of our brand. His technical skills and industry knowledge have been instrumental in our success.”</p>
+        </blockquote>
+        <figcaption>
+            <div class="image">
+                <Image
+                    src={authorImage}
+                    width={40}
+                    densities={[1, 2, 3]}
+                    loading="eager"
+                    alt="Weber Rocha (left) and Andrea Avila (right)"
+                />
+            </div>
+            <p>Andrea Avila — <cite><a href="https://pecorinoitalian.co.uk/" target="_blank">Pecorino Wittering</a></cite></p>
+        </figcaption>
+    </figure>
 </section>
 <style lang="scss">
     .testimonial {
@@ -27,7 +30,7 @@ import authorImage from '../assets/testimonials/weber-andrea.jpg';
         flex-direction: column;
         justify-content: center;
 
-        > * {
+        figure {
             max-width: 1000px;
             margin: 0 auto;
         }
