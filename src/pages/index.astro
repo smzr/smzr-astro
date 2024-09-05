@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import Testimonial from "../components/Testimonial.astro";
 
@@ -8,40 +9,7 @@ const year = today.getFullYear();
 const experience = year - 2019;
 ---
 <Layout title="Sammy McKay | Full-stack web developer" description={`I'm a full-stack developer, with over ${experience} years professional experience engineering tailored solutions.`}>
-	<section class="hero">
-        <div class="container">
-            <div class="content flow">
-                <h1>
-                    <span>Hello, I am</span>
-                    Sammy
-                </h1>
-                <p>A full-stack developer, with over {experience} years professional experience engineering tailored solutions.</p>
-            </div>
-            <div class="image">
-                <img src="/images/sammy.jpg" alt="Hero Image">
-                <a class="marquee-wrapper" href="https://www.youtube.com/watch?v=Vhh_GeBPOhs">
-                    <div class="marquee">
-                        <div class="marquee__content">
-                            <div class="text">Developers!</div>
-                            <div class="clap">👏</div>
-                            <div class="text">Developers!</div>
-                            <div class="clap">👏</div>
-                            <div class="text">Developers!</div>
-                            <div class="clap">👏</div>
-                        </div>
-                        <div class="marquee__content" aria-hidden="true">
-                            <div class="text">Developers!</div>
-                            <div class="clap">👏</div>
-                            <div class="text">Developers!</div>
-                            <div class="clap">👏</div>
-                            <div class="text">Developers!</div>
-                            <div class="clap">👏</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+	<Hero />
     <div class="bg-grid-wrapper">
         <Projects />
         <Testimonial />
@@ -49,126 +17,6 @@ const experience = year - 2019;
     </div>
 </Layout>
 <style lang="scss">
-    .hero {
-        position: relative;
-        overflow-x: hidden;
-        padding: 6rem 2.5rem;
-
-        &::before {
-            position: absolute;
-            z-index: -1;
-            content: "";
-            top: 0;
-            bottom: 4rem;
-            width: 150%;
-            left: -25%;
-            background: linear-gradient(80deg, #ff0f7b, #ff2c6c, #ff425d, #ff5650, #ff6943, #ff7b38, #ff8b2f, #f89b29);
-            -webkit-mask-image: radial-gradient(rgba(0,0,0,.45), transparent 70%);
-            mask-image: radial-gradient(rgba(0,0,0,.45), transparent 70%);
-        }
-
-        .container {
-            max-width: 1280px;
-            width: 100%;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-        }
-
-        .content {
-            text-align: center;
-
-            h1 {
-                font-size: clamp(5rem, 1.2329rem + 10.9589vw, 10rem);
-                line-height: 1.2;
-
-                span {
-                    display: block;
-                    font-size: .25em;
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 400;
-                }
-            }
-
-            p {
-                font-size: clamp(1rem, 0.6233rem + 1.0959vw, 1.5rem);
-            }
-        }
-
-        .image {
-            overflow: hidden;
-            position: relative;
-            border-radius: 999px 999px 0 0;
-            aspect-ratio: 3 / 4;
-            width: 100%;
-            max-width: 525px;
-            margin: auto;
-
-            .marquee-wrapper {
-                display: block;
-                position: absolute;
-                max-width: 100%;
-                bottom: 0;
-                backdrop-filter: blur(6px);
-                background: rgba(255, 255, 255, 0.02);
-                text-align: center;
-                transition:  300ms ease-in-out;
-
-                &:hover {
-                    text-decoration: none;
-                    background: rgba(255, 255, 255, 0.05);
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0) 64%, #000);
-                    z-index: 2;
-                }
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 90% 25%;
-            }
-        }
-
-        @media (min-width: 768px) {
-            padding: 8rem 2.5rem 10rem;
-
-            .container {
-                grid-template-columns: 1fr 1fr;
-                align-items: center;
-            }
-
-            .content {
-                text-align: left;
-
-                h1 span {
-                    margin-bottom: .5rem;
-                }
-
-                p {
-                    max-width: 32ch;
-                }
-            }
-
-            .image {
-                aspect-ratio: 7 / 10;
-                max-width: 100%;
-                width: auto;
-                max-height: calc( 75vh -  6rem );
-            }
-        }
-    }
-
     .bg-grid-wrapper {
         position: relative;
         padding-bottom: 6rem;
