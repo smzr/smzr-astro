@@ -32,9 +32,14 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
         pagination: {
             el: ".swiper-pagination",
             dynamicBullets: true,
-            clickable: false
+            clickable: true
         },
-        allowTouchMove: false
+        on: {
+            activeIndexChange(s) {
+                const imageSwiper = s.controller.control;
+                imageSwiper.autoplay.start();
+            }
+        },
     });
     
     const imageSwiper = new Swiper(".projects-image > .swiper", {
@@ -42,8 +47,7 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
         effect: 'fade',
         autoplay: {
             delay: 10000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
+            disableOnInteraction: false
         },
         on: {
             autoplayTimeLeft(s, time, progress) {
@@ -59,6 +63,20 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
 
     contentSwiper.controller.control = imageSwiper;
     imageSwiper.controller.control = contentSwiper;
+
+    document.querySelector(".projects-content > .swiper").addEventListener("mouseenter", () => {
+        imageSwiper.autoplay.pause();
+    });
+    document.querySelector(".projects-image > .swiper").addEventListener("mouseenter", () => {
+        imageSwiper.autoplay.pause();
+    });
+
+    document.querySelector(".projects-content > .swiper").addEventListener("mouseleave", () => {
+        imageSwiper.autoplay.resume();
+    });
+    document.querySelector(".projects-image > .swiper").addEventListener("mouseleave", () => {
+        imageSwiper.autoplay.resume();
+    });
 </script>
 <style lang="scss">
     .projects {
