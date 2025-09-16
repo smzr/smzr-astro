@@ -1,170 +1,347 @@
 ---
 import { Image } from 'astro:assets';
 import sammy from '../assets/sammy.jpg';
-
-const today = new Date();
-const year = today.getFullYear();
-const experience = year - 2019;
 ---
-<section class="hero">
-    <div class="container">
-        <div class="content flow">
-            <h1>
-                <span>Hello, I am</span>
-                Sammy
-            </h1>
-            <p>A full-stack developer, with over {experience} years professional experience engineering tailored solutions.</p>
-        </div>
-        <div class="image">
-            <Image
-                src={sammy}
-                width={sammy.width / 2}
-                densities={[1, 2]}
-                loading="eager"
-                alt="Sammy McKay"
-            />
-            <a class="marquee-wrapper" href="https://www.youtube.com/watch?v=Vhh_GeBPOhs">
-                <div class="marquee">
-                    <div class="marquee__content">
-                        <div class="text">Developers!</div>
-                        <div class="clap">👏</div>
-                        <div class="text">Developers!</div>
-                        <div class="clap">👏</div>
-                        <div class="text">Developers!</div>
-                        <div class="clap">👏</div>
-                    </div>
-                    <div class="marquee__content" aria-hidden="true">
-                        <div class="text">Developers!</div>
-                        <div class="clap">👏</div>
-                        <div class="text">Developers!</div>
-                        <div class="clap">👏</div>
-                        <div class="text">Developers!</div>
-                        <div class="clap">👏</div>
-                    </div>
-                </div>
-            </a>
-        </div>
+<div class="hero-freelance">
+  <!-- Background gradient + vignette -->
+  <div class="background-layer">
+    <div class="gradient-orange"></div>
+    <div class="gradient-yellow"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <!-- Simple top nav -->
+  <header class="top-nav">
+    <a href="#" class="logo-link">
+      <span class="logo-mark">
+        <Image
+          src={sammy}
+          width={32}
+          height={32}
+          loading="eager"
+          alt="Sammy McKay"
+        />
+      </span>
+      <span class="logo-text">Sammy McKay</span>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="hire-button">Hire me</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <!-- Availability pill -->
+      <a href="#contact" class="availability-pill">
+        <span class="status-dot"></span>
+        Now booking Q4 2025
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <h1 class="hero-title">
+        Your tech partner for
+        <span class="gradient-text">websites, systems & IT support</span>
+      </h1>
+
+      <p class="hero-description">
+        Helping businesses in Chichester and the surrounding areas work smarter with websites, automation, and system integrations. Everything you need to keep things running smoothly.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="primary-button">
+          Start a project →
+        </a>
+        <a href="#work" class="secondary-button">
+          View my work
+        </a>
+      </div>
     </div>
-</section>
+  </section>
+</div>
 <style>
-    .hero {
+    .hero-freelance {
         position: relative;
-        overflow-x: hidden;
-        padding: 6rem 2.5rem;
+        isolation: isolate;
+        overflow: hidden;
+        background: #0D1F1B;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-        &::before {
-            position: absolute;
-            z-index: -1;
-            content: "";
-            top: 0;
-            bottom: 4rem;
-            width: 150%;
-            left: -25%;
-            background: linear-gradient(80deg, #ff0f7b, #ff2c6c, #ff425d, #ff5650, #ff6943, #ff7b38, #ff8b2f, #f89b29);
-            -webkit-mask-image: radial-gradient(rgba(0,0,0,.45), transparent 70%);
-            mask-image: radial-gradient(rgba(0,0,0,.45), transparent 70%);
+    /* Background gradient + vignette */
+    .background-layer {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        z-index: -10;
+    }
+
+    .gradient-orange {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(1200px 600px at 70% 20%, #FF7A1A 0%, transparent 60%);
+        opacity: 0.6;
+    }
+
+    .gradient-yellow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(900px 400px at 20% 60%, #FFB347 0%, transparent 60%);
+        opacity: 0.4;
+    }
+
+    .vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center,transparent 60%,#061309 100%), linear-gradient(to bottom,transparent 75%,#061309 100%);
+    }
+
+    /* Simple top nav */
+    .top-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .logo-mark {
+        display: inline-flex;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+    }
+
+    .logo-mark img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .logo-text {
+        font-weight: 600;
+        letter-spacing: -0.025em;
+    }
+
+    .nav-links {
+        display: none;
+        gap: 2rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 150ms ease;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .hire-button {
+        display: none;
+        align-items: center;
+        border-radius: 9999px;
+        background: white;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #0b0b1b;
+        text-decoration: none;
+        transition: background-color 150ms ease;
+    }
+
+    .hire-button:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
         }
 
-        .container {
-            max-width: 1280px;
-            width: 100%;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
+        .hire-button {
+            display: inline-flex;
         }
+    }
 
-        .content {
-            text-align: center;
+    /* Hero */
+    .hero-section {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1.5rem 1.5rem 5rem;
+    }
 
-            h1 {
-                font-size: clamp(5rem, 1.2329rem + 10.9589vw, 10rem);
-                line-height: 1.2;
-
-                span {
-                    display: block;
-                    font-size: .25em;
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 400;
-                }
-            }
-
-            p {
-                font-size: clamp(1rem, 0.6233rem + 1.0959vw, 1.5rem);
-            }
+    @media (min-width: 768px) {
+        .hero-section {
+            padding: 2.5rem 1.5rem 7rem;
         }
+    }
 
-        .image {
-            overflow: hidden;
-            position: relative;
-            border-radius: 999px 999px 0 0;
-            aspect-ratio: 3 / 4;
-            width: 100%;
-            max-width: 525px;
-            margin: auto;
-            background-color: #0000003a;
-
-            .marquee-wrapper {
-                display: block;
-                position: absolute;
-                max-width: 100%;
-                bottom: 0;
-                backdrop-filter: blur(6px);
-                background: rgba(255, 255, 255, 0.02);
-                text-align: center;
-                transition:  300ms ease-in-out;
-
-                &:hover {
-                    text-decoration: none;
-                    background: rgba(255, 255, 255, 0.05);
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(0, 0, 0, 0) 64%, #000);
-                    z-index: 2;
-                }
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 90% 25%;
-            }
+    @media (min-width: 1024px) {
+        .hero-section {
+            padding: 2.5rem 1.5rem 8rem;
         }
+    }
 
-        @media (min-width: 768px) {
-            padding: 8rem 2.5rem 10rem;
+    .hero-content {
+        max-width: 56rem;
+        margin: 0 auto;
+        text-align: center;
+    }
 
-            .container {
-                grid-template-columns: 1fr 1fr;
-                align-items: center;
-            }
+    /* Availability pill */
+    .availability-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+        text-decoration: none;
+        transition: background-color 150ms ease;
+    }
 
-            .content {
-                text-align: left;
+    .availability-pill:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
 
-                h1 span {
-                    margin-bottom: .5rem;
-                }
+    .status-dot {
+        display: inline-flex;
+        height: 0.5rem;
+        width: 0.5rem;
+        border-radius: 50%;
+        background: #10b981;
+    }
 
-                p {
-                    max-width: 32ch;
-                }
-            }
+    .arrow {
+        transition: transform 150ms ease;
+    }
 
-            .image {
-                aspect-ratio: 7 / 10;
-                max-width: 100%;
-                width: auto;
-                max-height: calc( 75vh -  6rem );
-            }
+    .availability-pill:hover .arrow {
+        transform: translateX(2px);
+    }
+
+    .hero-title {
+        margin-top: 1.5rem;
+        font-size: clamp(3rem, 8vw, 4.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+
+    .gradient-text {
+        background: linear-gradient(to right, #FC4A1A, #F7B733);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .hero-description {
+        margin: 1.5rem auto 0;
+        text-balance: balance;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.55;
+        text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+        .hero-description {
+            font-size: 1.125rem;
         }
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    @media (min-width: 640px) {
+        .hero-actions {
+            flex-direction: row;
+        }
+    }
+
+    .primary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        background: white;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #0b0b1b;
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        transition: background-color 150ms ease;
+    }
+
+    .primary-button:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .secondary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+        text-decoration: none;
+        transition: background-color 150ms ease;
+    }
+
+    .secondary-button:hover {
+        background: rgba(255, 255, 255, 0.15);
     }
 </style>
