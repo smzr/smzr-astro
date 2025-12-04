@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading.astro";
 import ProjectsContentSlider from "./ProjectsContentSlider.astro";
 import ProjectsImageSlider from "./ProjectsImageSlider.astro";
 ---
-<section class="projects">
+<section class="projects" id="work">
     <SectionHeading>
         <h2>Some of my work</h2>
         <p>I'm a problem solver at heart and love taking on complex and challenging projects. I'm great at taking sophisticated ideas and figuring out how to get them built.</p>
@@ -41,7 +41,7 @@ import ProjectsImageSlider from "./ProjectsImageSlider.astro";
             }
         },
     });
-    
+
     const imageSwiper = new Swiper(".projects-image > .swiper", {
         modules: [Navigation, EffectFade, Controller, Autoplay],
         effect: 'fade',
