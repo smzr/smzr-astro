@@ -1,6 +1,27 @@
 ---
 import { Image } from 'astro:assets';
-import sammy from '../assets/sammy.jpg';
+import sammy from '../assets/sammy-3.jpg';
+
+// Calculate the next booking quarter
+function getNextBookingQuarter() {
+  const today = new Date();
+  const currentMonth = today.getMonth() + 1;
+  const currentYear = today.getFullYear();
+
+  const currentQuarter = Math.ceil(currentMonth / 3);
+
+  let nextQuarter = currentQuarter + 1;
+  let nextYear = currentYear;
+
+  if (nextQuarter > 4) {
+    nextQuarter = 1;
+    nextYear += 1;
+  }
+
+  return `Now booking Q${nextQuarter} ${nextYear}`;
+}
+
+const bookingText = getNextBookingQuarter();
 ---
 <div class="hero-freelance">
   <!-- Background gradient + vignette -->
@@ -16,20 +37,20 @@ import sammy from '../assets/sammy.jpg';
       <span class="logo-mark">
         <Image
           src={sammy}
-          width={32}
-          height={32}
+          width={128}
+          height={128}
           loading="eager"
           alt="Sammy McKay"
         />
       </span>
       <span class="logo-text">Sammy McKay</span>
     </a>
-    <nav class="nav-links">
+    <!-- <nav class="nav-links">
       <a class="nav-link" href="#work">Work</a>
       <a class="nav-link" href="#services">Services</a>
       <a class="nav-link" href="#about">About</a>
       <a class="nav-link" href="#contact">Contact</a>
-    </nav>
+    </nav> -->
     <a href="#contact" class="hire-button">Hire me</a>
   </header>
 
@@ -39,17 +60,17 @@ import sammy from '../assets/sammy.jpg';
       <!-- Availability pill -->
       <a href="#contact" class="availability-pill">
         <span class="status-dot"></span>
-        Now booking Q4 2025
+        {bookingText}
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
       <h1 class="hero-title">
         Your tech partner for
-        <span class="gradient-text">websites, systems & IT support</span>
+        <span class="gradient-text">websites, software & business systems</span>
       </h1>
 
       <p class="hero-description">
-        Helping businesses in Chichester and the surrounding areas work smarter with websites, automation, and system integrations. Everything you need to keep things running smoothly.
+        Helping businesses in Chichester work smarter with bespoke apps, websites, automations, and integrations. Everything built around what your business needs.
       </p>
 
       <div class="hero-actions">
